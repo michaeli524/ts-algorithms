@@ -17,19 +17,19 @@ interface Comparable<T> {
   compareTo(b: T): number;
 }
 
-class MyObject implements Comparable<number> {
-  age: number = 0;
-  compareTo(b: any): number {
-    if (this.age === b.age) {
-      return 0;
-    }
-    return this.age > b.age ? 1 : -1;
-  }
-}
+// class MyObject implements Comparable<number> {
+//   age: number = 0;
+//   compareTo(b: number): number {
+//     if (this.age === b) {
+//       return 0;
+//     }
+//     return this.age > b ? 1 : -1;
+//   }
+// }
 
-let aObj = new MyObject();
-aObj.age = 19;
-console.log(aObj.compareTo(12));
+// let aObj = new MyObject();
+// aObj.age = 19;
+// console.log(aObj.compareTo(13));
 
 // class myObject2 implements Comparable<object> {
 //   age: number = 0;
@@ -40,5 +40,18 @@ console.log(aObj.compareTo(12));
 //     return this.age > b.age ? 1 : -1;
 //   }
 // }
+class MyObject implements Comparable<MyObject> {
+  age: number = 0;
+  compareTo(b: MyObject): number {
+    if (this.age === b.age) {
+      return 0;
+    }
+    return this.age > b.age ? 1 : -1;
+  }
+}
 
-console.log("Successfully Debug");
+let myObject = new MyObject();
+myObject.age = 25;
+let myObject2 = new MyObject();
+myObject2.age = 23;
+console.log(myObject.compareTo(myObject2));
