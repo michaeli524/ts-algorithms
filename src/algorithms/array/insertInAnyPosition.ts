@@ -15,3 +15,5 @@ for (let i = -2; i < 14; i++) {
 console.log(num);
 num.splice(5, 3, 2, 3, 4);
 console.log(num);
+
+export {};
