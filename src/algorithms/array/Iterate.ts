@@ -14,5 +14,15 @@ num.forEach((x) => console.log(x % 2 === 0));
 let myMap = num.map(isEven);
 
 console.log("myMap:", myMap);
+console.log("返回每一个元素");
+
+//use filter
+const evenNumbers = num.filter(isEven);
+console.log("the filter fun only return the true index");
+console.log(evenNumbers);
+
+//use reduce
+console.log("first");
+num.reduce((previous, current) => previous + current);
 
 export {};
